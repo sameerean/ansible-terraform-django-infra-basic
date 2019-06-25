@@ -1,0 +1,34 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+
+#  https://www.microcloudy.com/2018/12/24/droplet-run-centos-on-digitalocean-cloud-using-vagrant/
+# https://github.com/devopsgroup-io/vagrant-digitalocean
+
+
+Vagrant.configure("2") do |config|
+
+	config.ssh.insert_key = false
+	config.vm.box_check_update = false
+
+	config.vm.define "ci-server-local" do |ciserver_config|
+    ciserver_config.vm.box = "centos/7"
+		ciserver_config.vm.hostname = "CiServerLocal"
+		ciserver_config.vm.network "forwarded_port", guest: 8080, host: 7070
+		ciserver_config.vm.network "forwarded_port", guest: 80, host: 8100
+		ciserver_config.vm.network "forwarded_port", guest: 8000, host: 8000
+		ciserver_config.vm.network "forwarded_port", guest: 8200, host: 8200
+		ciserver_config.vm.network "forwarded_port", guest: 7000, host: 7000
+		ciserver_config.vm.network "forwarded_port", guest: 9001, host: 9001
+		ciserver_config.vm.synced_folder ".", "/home/vagrant/vagrant_jenkins", mount_options: ["dmode=775"]
+		ciserver_config.vm.provider "virtualbox" do |ciserver_local|
+      	ciserver_local.name = "ciserver_local"
+      	opts = ["modifyvm", :id, "--natdnshostresolver1", "on"]
+      	ciserver_local.customize opts
+      	ciserver_local.memory = "2048"
+      end
+      ciserver_config.vm.provision :shell, path: "bootstrap-ciserver.sh"
+		end
+
+end
+
