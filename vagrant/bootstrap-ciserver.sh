@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+sh ./env-vars.sh
 VAGRANT_HOST_DIR=/home/vagrant/vagrant_jenkins
 
 echo "======================================="
@@ -123,6 +124,11 @@ java -jar jenkins-cli.jar -s http://localhost:8080/ -auth admin:admin install-pl
 #sudo chown -R webadmin:webadmin /opt/apps-deploy/
 
 
+echo "======================================="
+echo "Generating SSH Key ...."
+echo "======================================="
+
+cat /dev/zero | ssh-keygen -q -N "" > /dev/null
 
 echo "======================================="
 echo "Vagrant provisioning complete."

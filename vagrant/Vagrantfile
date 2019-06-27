@@ -14,6 +14,7 @@ Vagrant.configure("2") do |config|
 	config.vm.define "ci-server-local" do |ciserver_config|
     ciserver_config.vm.box = "centos/7"
 		ciserver_config.vm.hostname = "CiServerLocal"
+		ciserver_config.vm.network "private_network", ip: "192.168.50.123"
 		ciserver_config.vm.network "forwarded_port", guest: 8080, host: 7070
 		ciserver_config.vm.network "forwarded_port", guest: 80, host: 8100
 		ciserver_config.vm.network "forwarded_port", guest: 8000, host: 8000
