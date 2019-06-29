@@ -2,7 +2,9 @@
 Infrastructure as code project for Django Application using Terraform, Ansible, Jenkins and Vagrant as DevOps tools and GUnicorn, NGinx and Supervisor, gearman as server environment components
 
 
-# Running Terraform - Navigate to folder - terraform>_
+# Running Terraform 
+
+> cd terraform
 
 ### Just once in the beginning
 > terraform init
