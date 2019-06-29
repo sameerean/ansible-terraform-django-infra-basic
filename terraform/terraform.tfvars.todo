@@ -1,0 +1,4 @@
+do_token="past your digital ocean api token here"
+
+// Your id_rsa.pub of the user at the local machine. Feel free to modify the following value
+pub_key="$HOME/.ssh/id_rsa.pub"
