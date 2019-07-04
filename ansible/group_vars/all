@@ -1,0 +1,5 @@
+---
+
+# Group vars for all servers
+
+ansible_user: root

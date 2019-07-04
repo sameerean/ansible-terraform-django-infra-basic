@@ -1,0 +1,23 @@
+# ---
+
+# tasks:
+# - debug:
+#   msg: "Debug message from centos-upgrade.yml"
+      
+
+  - name: Update all packages
+    yum:
+      name: "*"
+      state: latest
+
+  - name: Install common packages
+    become: true
+    yum:
+      name: 
+        - epel-release
+        - net-tools
+        - wget
+        - git
+      state: latest
+  
+  

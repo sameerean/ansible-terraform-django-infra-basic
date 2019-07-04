@@ -1,0 +1,19 @@
+---
+  # - name: set system path
+  #   template:
+  #     src: environment.j2
+  #     dest: /etc/environment
+  #     mode: '0644'
+  #     owner: root
+  #     group: root
+
+  # - name: create custom executables path
+  #   file:
+  #     path: /opt/bin
+  #     state: directory
+  #     owner: root
+
+## Ansiblify the lines below...
+# sudo yum install -y net-tools
+# sudo yum install -y wget
+# sudo yum -y install git
