@@ -19,3 +19,11 @@
     group: webadmin
     shell: /bin/bash
 
+- name: Add user "webadmin" to sudoers list
+  lineinfile:
+    path: /etc/sudoers.d/webadmin
+    line: 'webadmin ALL=(ALL) NOPASSWD: ALL'
+    state: present
+    mode: 0440
+    create: yes
+    validate: 'visudo -cf %s'
