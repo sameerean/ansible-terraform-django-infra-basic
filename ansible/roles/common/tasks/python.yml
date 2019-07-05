@@ -1,0 +1,25 @@
+- name: install the CentOS Community Approved third-party RPM repository which contains latest upstream versions of PHP, Python, MySQL, etc.
+  yum:
+    name: https://centos7.iuscommunity.org/ius-release.rpm
+    state: present
+
+
+- name: Update all packages
+  yum:
+    name: "*"
+    state: latest
+
+- name: Install Python libs
+  become: true
+  yum:
+    name: 
+      - python36u
+      - python36u-pip
+      - python-pip
+    state: present
+
+- name: Install & upgrade pip with pip3.6
+  pip:
+    name: pip
+    executable: pip3.6
+    state: latest
