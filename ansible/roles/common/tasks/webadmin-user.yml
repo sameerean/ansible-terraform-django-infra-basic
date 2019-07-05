@@ -1,0 +1,21 @@
+
+- name: Ensure group "webadmin" exists
+  group:
+    name: webadmin
+    state: present
+    system: yes
+
+# - name: Create directory - /home/webadmin
+#   file:
+#     path: /home/webadmin
+#     state: directory
+
+- name: "Add user webadmin with home directory"
+  user: 
+    name: webadmin
+    comment: User for all web servers and processes
+    home: /home/webadmin
+    system: yes
+    group: webadmin
+    shell: /bin/bash
+

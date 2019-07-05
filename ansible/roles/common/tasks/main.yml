@@ -1,7 +1,7 @@
 ---
 # tasks file for common
-- import_tasks: centos-upgrade.yml
+- import_tasks: centos-setup.yml
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
 
-- import_tasks: common-deps.yml
+- import_tasks: webadmin-user.yml
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
