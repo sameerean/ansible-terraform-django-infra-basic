@@ -14,6 +14,22 @@ sudo yum install -y wget
 sudo yum -y install unzip
 sudo yum -y install git
 
+sudo yum -y install yum-utils
+sudo yum -y groupinstall development
+
+echo "======================================="
+echo "Installing Pythin libraries..."
+echo "======================================="
+
+sudo yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+sudo yum -y update
+
+sudo yum -y install python36u python36u-pip
+
+sudo yum -y install python-pip
+
+sudo pip3.6 install --upgrade pip
+
 
 echo "======================================="
 echo "Installing OpenJDK 1.8 .."
@@ -106,7 +122,7 @@ echo "Installing Terraform...."
 echo "======================================="
 
 sudo yum -y install ansible
-
+sudo pip install ansible-lint
 
 
 echo "======================================="
