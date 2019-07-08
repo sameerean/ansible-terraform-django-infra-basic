@@ -1,7 +1,7 @@
 Role Name
 =========
 
-Installs and configures mongo db
+Installs and configures mongo db.
 
 Requirements
 ------------
@@ -25,7 +25,7 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - { role: sameerean.mongodb, x: 42 }
 
 License
 -------
