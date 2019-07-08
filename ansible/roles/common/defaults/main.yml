@@ -10,4 +10,4 @@ system:
     - /bin
 env:
   variables:
-    - "AUTHOR=Shameer"
+    - "AUTHOR=Shameer Kunjumohamed"

@@ -1,5 +1,6 @@
 ---
 # tasks file for common
+
 - import_tasks: centos-setup.yml
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
 

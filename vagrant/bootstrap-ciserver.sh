@@ -18,7 +18,7 @@ sudo yum -y install yum-utils
 sudo yum -y groupinstall development
 
 echo "======================================="
-echo "Installing Pythin libraries..."
+echo "Installing Python libraries..."
 echo "======================================="
 
 sudo yum -y install https://centos7.iuscommunity.org/ius-release.rpm

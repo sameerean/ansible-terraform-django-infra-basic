@@ -1,6 +1,6 @@
 galaxy_info:
   author: Shameer Kunjumohamed
-  description: This role covers all the common behaviors across all other roles
+  description: Installs and configures mongo db
   company: DevLogz
 
   # If the issue tracker for your role is not on github, uncomment the

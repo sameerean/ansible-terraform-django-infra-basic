@@ -1,0 +1,24 @@
+
+- name: Add yum repo for MongoDB
+  yum_repository:
+    name: MongoDB
+    description: MongoDB Repository
+    file: mongodb-org
+    baseurl: http://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.0/x86_64/
+    gpgcheck: no
+    enabled: yes
+
+- name: Install Mongo DB
+  become: true
+  become_user: root
+  yum:
+    name: mongodb-org
+    state: latest
+  notify: Restart MongoDB
+  
+- name: Enable MongoDB service
+  service:
+    name: mongod
+    enabled: true
+  become: true
+  become_user: root

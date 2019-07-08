@@ -3,5 +3,16 @@
 - hosts: app_servers
   become: yes
   roles: 
-    - common
+    - {
+        role: common,
+        tags: ['common']
+        }
+    - {
+        role: mongodb,
+        tags: ['mongodb']
+        }
+
+    # - common
+    # - mongodb
+
     # - django
