@@ -1,4 +1,17 @@
 ---
 # defaults file for apps.vagrant-django
 
-git_repo_url: https://github.com/sameerean/vagrant-django.git
+remote:
+  repo:
+    url: https://github.com/sameerean/vagrant-django.git
+deploy:
+  local:
+    root: /usr/local
+    dev: /usr/local/dev
+    test: /usr/local/test
+  app: 
+    name: vagrant-django
+  user: 
+    name: webadmin
+    group: webadmin
+
