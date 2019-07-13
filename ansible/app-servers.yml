@@ -11,6 +11,10 @@
         role: mongodb,
         tags: ['mongodb']
         }
+    - {
+        role: geerlingguy.supervisor,
+        tags: ['supervisor', 'supervisord']
+    }
 
     # - common
     # - mongodb
