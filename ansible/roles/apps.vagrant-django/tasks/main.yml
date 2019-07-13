@@ -1,0 +1,5 @@
+---
+# tasks file for apps.vagrant-django
+
+- import_tasks: scm-checkout.yml
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'

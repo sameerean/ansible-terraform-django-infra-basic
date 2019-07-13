@@ -1,0 +1,28 @@
+
+- name: Create Dev directory if it does not exist
+  file:
+    path: /usr/local/dev/
+    state: directory
+    mode: '0755'
+
+- name: Directory ownership to webadmin
+  file:
+    path: /usr/local/dev/
+    state: directory
+    recurse: yes
+    owner: webadmin
+    group: webadmin
+
+- name: Check-out from Git
+  git:
+    repo: "{{git_repo_url}}"
+    dest: /usr/local/dev/vagrant-django
+  become_user: webadmin
+
+# - name: Directory ownership to webadmin
+#   file:
+#     path: /usr/local/dev/
+#     state: directory
+#     recurse: yes
+#     owner: webadmin
+#     group: webadmin

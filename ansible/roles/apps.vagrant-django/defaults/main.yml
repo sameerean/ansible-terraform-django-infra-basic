@@ -1,0 +1,4 @@
+---
+# defaults file for apps.vagrant-django
+
+git_repo_url: https://github.com/sameerean/vagrant-django.git

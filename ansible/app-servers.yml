@@ -12,8 +12,16 @@
         tags: ['mongodb']
         }
     - {
+        role: nginxinc.nginx,
+        tags: ['nginx']
+    }
+    - {
         role: geerlingguy.supervisor,
         tags: ['supervisor', 'supervisord']
+    }
+    - {
+        role: apps.vagrant-django,
+        tags: ['vagrant-django']
     }
 
     # - common
